@@ -1,0 +1,99 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=0.5in]{geometry}
+\title{Several-Variable Calculus Midterm}
+\author{Ipeknaz Icten}
+\date{September 2023}
+
+\begin{document}
+\maketitle
+
+\textbf{CHAPTER 2} \\
+
+\textbf{Equations:} 
+\begin{itemize}
+    \item Dot product: $ \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + \ldots + a_n b_n$
+    \item Cross product: $ \mathbf{a} \times \mathbf{b} = \begin{vmatrix} i & j & k \\ a_x & a_y & a_z \\ b_x & b_y & b_z \\ \end{vmatrix} = i \cdot det\begin{vmatrix} a_y & a_z \\ b_y & b_z \\ \end{vmatrix} - j \cdot det\begin{vmatrix} a_x & a_z \\ b_x & b_z \\ \end{vmatrix} + k \cdot det\begin{vmatrix} a_x & a_y \\ b_x & b_y \\ \end{vmatrix} \\ = (a_y \cdot b_z - a_z \cdot b_y, -a_x \cdot b_z + a_z \cdot b_x, a_x \cdot b_y - a_y \cdot b_x)$
+    \item $\mathbf{a} \cdot \mathbf{a} = \|\mathbf{a}\|^2 $
+    \item $\mathbf{a} \cdot \mathbf{b} = \|\mathbf{a}\| \cdot \|\mathbf{b}\| \cdot \cos(\theta)$ \\
+    \item $\|\mathbf{a} \times \mathbf{b}\| = \|\mathbf{a} \times \|\mathbf{b}\| \times \sin(\theta) =$ the area of a parallelogram 
+    \item The parameterization of the \textbf{line} from A to B is $\alpha(t) = \mathbf{v} \cdot t$ + A
+    \item The parameterization of the \textbf{curve} with radius r is $\alpha(t) = (r \cdot \cos(\theta), r \cdot \sin(\theta))$ for $0 \leq \theta \leq 2\pi$
+    \item The parameterization of the \textbf{helix} is $\alpha(t) = (r \cdot \cos(\theta), r \cdot \sin(\theta), b \cdot \theta)$ where b is a scalar \\
+\end{itemize}
+
+\textbf{Definitions:} 
+\begin{itemize}
+    \item For a curve in $\mathbb{R}^n$, the \textbf{parameterization} has the form: $\alpha(t) = (x_1(t), x_2(t),...,x_n(t))$ for $a \leq t \leq b$ \\
+    \item Position: $\alpha(t)$
+    \item Velocity: $\mathbf{v}(t) = \alpha'(t)$
+    \item Speed: $\|\mathbf{v}(t)\| = \|\alpha'(t)\|$
+    \item Acceleration: $\mathbf{a}(t) = \mathbf{v}'(t) = \alpha''(t)$ \\
+    \item Arclength: $l = \|\alpha(t + \Delta\cdot t ) - \alpha(t)\|$
+    \item The \textbf{aclength of a curve} parameterized by $\alpha(t)$ from $a \leq t \leq b$ is $\int_{a}^{b} \|\alpha'(t)\| \cdot dt$ 
+    \item Integral of a function with respect to arclength: $\int_{\alpha} f \cdot ds = \int_{a}^{b}f(\alpha(t)) \cdot \|\alpha'(t)\| \cdot dt$ \\
+    \item Tangent Vector: $\mathbf{T}(t) = \frac{\mathbf{\alpha}'(t)}{\|\mathbf{\alpha}'(t)\|}$
+    \item Normal Vector: $\mathbf{N}(t) = \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|}$
+    \item Bionormal Vector: $\mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t)$ \\
+    \item \textbf{Frenet Vectors} are a set of orthogonal vectors, ex. $(\mathbf{T}(t), \mathbf{N}(t), \mathbf{B}(t))$
+    \item \textbf{Frenet Vectors} form a \textbf{basis} in $\mathbb{R}^n$ \\
+    \item Curvature: The rate of turning $\mathbf{\kappa(t)} = \frac{\|\mathbf{T}'(t)\|}{\|\mathbf{\alpha}'(t)\|}$
+    \item Torsion: The rate of wobbling $\mathbf{\tau}(t) = - \frac{c(t)}{\|\mathbf{\alpha}'(t)\|}$ \\
+\end{itemize}
+
+\textbf{Identities:}
+\begin{itemize}
+    \item The vector $\mathbf{v}$ from A to B is equal to B-A
+    \item $\mathbf{a} \perp \mathbf{b}$ if $\mathbf{a} \cdot \mathbf{b} = 0$
+    \item $\mathbf{a} \times \mathbf{b}$ is always orthogonal to $\mathbf{a}$ and $\mathbf{b}$ if $\mathbf{a}$ and $\mathbf{b}$ are not multiples of each other
+    \item $\|\mathbf{T}(t)\| = 1$
+    \item $\mathbf{T}(t)$ and $\mathbf{N}(t)$ are orthogonal to each other
+    \item The binormal vector $\mathbf{B}(t)$ is orthogonal to $\mathbf{T}(t)$ and $\mathbf{N}(t)$
+    \item $\mathbf{B}'(t) = c(t) \cdot \mathbf{N}(t)$ where $c(t)$ is a scalar \\
+\end{itemize}
+
+\textbf{CHAPTER 3} \\
+
+\textbf{Sketching Graphs:}
+\begin{itemize}
+    \item \textbf{Level sets} $f(\mathbf{x}) = c$, make output equal to a constant
+    \item \textbf{Cross sections} $f(x_1, x_2,..., x_n) = y$, make an input variable constant \\
+\end{itemize}
+
+\textbf{Common Graphs:}
+\begin{itemize}
+    \item $x^2 + y^2 + z^2 = a^2$ is a sphere of radius a
+    \item $x^2 + y^2 = a^2$ is a cylinder of radius a \\
+\end{itemize}
+
+\textbf{Planes:}
+\begin{itemize}
+    \item For $\mathbf{v} = (x, y, z)$ and $\mathbf{p} = (p_1, p_2, p_3)$ on a plane, $\mathbf{v} - \mathbf{b}$ lies on the plane
+    \item For $\mathbf{n} = (n_1, n_2, n_3)$ that is orthogonal to the plane, $\mathbf{n} \cdot (\mathbf{v} - \mathbf{p}) = 0$ \\ Therefore, $\mathbf{n} \cdot \mathbf{v} = \mathbf{n} \cdot \mathbf{p}$
+    \item If $\mathbf{n_1} \cdot \mathbf{n_2} = 0$, then planes $P_1$ and $P_2$ are perpendicular \\ If $\mathbf{n_1}$ and $\mathbf{n_2}$ are multiples of each other, then planes $P_1$ and $P_2$ are parallel \\
+\end{itemize}
+
+\textbf{Continuity:}
+\begin{itemize}
+    \item An \textbf{open set} is a set that does not contain its own boundary
+    \item A function f is continuous at point c if $f\mathbf{x}$ approaches $f\mathbf{c}$ as $\mathbf{x}$ approaches $\mathbf{c}$
+    \item If f and g are both continous, then [$f + g$] [$k \cdot f$] [$f \cdot g$] [$\frac{f}{g}$] and [$f o g$] are also continuous \\
+\end{itemize}
+
+\textbf{Partial Derivatives:}
+\begin{itemize}
+    \item The \textbf{gradient} of f is $\nabla f(\mathbf{x}) = (\frac{\partial f}{\partial x_1},...,\frac{\partial f}{\partial x_n})$
+    \item The \textbf{Jacobian matrix} or \textbf{derivative} is $Df(\mathbf{x} = [\frac{\partial f}{\partial x_1},...,\frac{\partial f}{\partial x_n}])$
+    \item The \textbf{first order affine approximation} of a function at point $\mathbf{a}$ is $l(\mathbf{x}) = f(\mathbf{a}) + Df(\mathbf{a}) \cdot [\mathbf{x} - \mathbf{a}]$ \\
+\end{itemize}
+
+\textbf{Differentiability:}
+\begin{itemize}
+    \item The function f is differentiable at point $\mathbf{a}$ if $\lim_{{\mathbf{x} \to \mathbf{a}}} \frac{f(\mathbf{x}) - l(\mathbf{x})}{\|\mathbf{x} - \mathbf{a}\|}$
+    \item If f is differentiable at $\mathbf{a}$, then f is continuous at $\mathbf{a}$
+    \item If some partial derivative of f does not exist at $\mathbf{a}$, then f is not differentiable at $\mathbf{a}$
+    \item If all partial derivatives of f are continuous on its domain U, then f is differentiable on its domain
+\end{itemize}
+
+\end{document}
